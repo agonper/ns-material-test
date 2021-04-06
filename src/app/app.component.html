@@ -1,0 +1,57 @@
+<GridLayout rows="*, auto">
+    <GridLayout
+            row="0">
+        <StackLayout [visibility]="selectedTab === 0 ? 'visible' : 'collapsed'">
+            <page-router-outlet name="homeTab"></page-router-outlet>
+        </StackLayout>
+        <StackLayout [visibility]="selectedTab === 1 ? 'visible' : 'collapsed'">
+            <page-router-outlet name="browseTab"></page-router-outlet>
+        </StackLayout>
+        <StackLayout [visibility]="selectedTab === 2 ? 'visible' : 'collapsed'">
+            <page-router-outlet name="searchTab"></page-router-outlet>
+        </StackLayout>
+    </GridLayout>
+    <BottomNavigationBar
+            (loaded)="onBarLoaded($event)"
+            (tabSelected)="onTabSelected($event)"
+            row="1">
+        <BottomNavigationTab title="Home" icon="res://round_home_black_18"></BottomNavigationTab>
+        <BottomNavigationTab title="Browse" icon="res://round_feed_black_18"></BottomNavigationTab>
+        <BottomNavigationTab title="Search" icon="res://round_search_black_18"></BottomNavigationTab>
+    </BottomNavigationBar>
+</GridLayout>
+
+<!--
+<BottomNavigation>
+    <TabStrip>
+        <TabStripItem class="navigation__item">
+            &lt;!&ndash;
+                Note TabStripItem will only accept single Label and/or single Image elements that it
+                will "adopt"; any other layout elements you try to specify will be ignored
+            &ndash;&gt;
+            <Label text="Home"></Label>
+            <Image src="font://&#xf015;" class="fas t-36"></Image>
+        </TabStripItem>
+        <TabStripItem class="navigation__item">
+            <Label text="Browse"></Label>
+            <Image src="font://&#xf1ea;" class="far t-36"></Image>
+        </TabStripItem>
+        <TabStripItem class="navigation__item">
+            <Label text="Search"></Label>
+            <Image src="font://&#xf002;" class="fas t-36"></Image>
+        </TabStripItem>
+    </TabStrip>
+
+    <TabContentItem>
+        <page-router-outlet name="homeTab"></page-router-outlet>
+    </TabContentItem>
+
+    <TabContentItem>
+        <page-router-outlet name="browseTab"></page-router-outlet>
+    </TabContentItem>
+
+    <TabContentItem>
+        <page-router-outlet name="searchTab"></page-router-outlet>
+    </TabContentItem>
+</BottomNavigation>
+-->
