@@ -1,7 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { TabSelectedEventData, BottomNavigationBar } from "nativescript-material-bottomnavigationbar";
-import { RouterExtensions } from "nativescript-angular/router";
-import { ActivatedRoute } from "@angular/router";
+import { TabSelectedEventData, BottomNavigationBar } from "@nativescript-community/ui-material-bottomnavigationbar";
 
 @Component({
     selector: "ns-app",
@@ -11,7 +9,7 @@ export class AppComponent implements OnInit {
 
     selectedTab = 0;
 
-    constructor(private routerExtension: RouterExtensions, private activeRoute: ActivatedRoute) {
+    constructor() {
         // Use the component constructor to inject providers.
     }
 

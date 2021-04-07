@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { alert, AlertOptions, MDCAlertControlerOptions, confirm, ConfirmOptions } from "nativescript-material-dialogs";
-import { Color, ImageSource } from "tns-core-modules";
+import { AlertOptions, Color, ConfirmOptions, ImageSource } from "@nativescript/core";
+import { alert, MDCAlertControlerOptions, confirm } from "@nativescript-community/ui-material-dialogs";
 
 @Component({
     selector: "Browse",
@@ -48,7 +48,7 @@ export class BrowseComponent implements OnInit {
             okButtonText: "Me quedo",
             cancelButtonText: "Salir",
             buttonInkColor: new Color(255, 255, 0, 0),
-            buttonTitleColor: new Color(255, 255, 0, 0),
+            buttonTitleColor: new Color(255, 255, 0, 0)
         };
         confirm(options).then((result) => console.log(result));
     }
