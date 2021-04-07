@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { AlertOptions, Color, ConfirmOptions, ImageSource } from "@nativescript/core";
-import { alert, MDCAlertControlerOptions, confirm } from "@nativescript-community/ui-material-dialogs";
+import { alert, MDCAlertControlerOptions, confirm, prompt } from "@nativescript-community/ui-material-dialogs";
 
 @Component({
     selector: "Browse",
@@ -66,5 +66,20 @@ export class BrowseComponent implements OnInit {
             buttonTitleColor: new Color(255, 255, 0, 0)
         };
         confirm(options).then((result) => console.log(result));
+    }
+
+    showPromptDialog() {
+        prompt({
+            // message: 'this is test Prompt!',
+            okButtonText: 'OK',
+            cancelButtonText: 'Cancel',
+            title: "Test prompt",
+            textFieldProperties: {
+                marginLeft: 20,
+                marginRight: 50,
+                hint: 'Say something'
+            },
+            autoFocus: true
+        }).then(result => console.log('prompt result', result));
     }
 }
