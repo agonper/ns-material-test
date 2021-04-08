@@ -21,8 +21,8 @@ export class BrowseComponent implements OnInit {
             titleAlignment: "center",
             message: "Mientras realizas una exposición la información sobre tu progreso se oculta temporalmente. Volverá a estar disponible en cuanto finalices la exposición.",
             okButtonText: "Vale",
-            buttonInkColor: new Color(255, 255, 0, 0),
-            buttonTitleColor: new Color(255, 255, 0, 0)
+            buttonInkColor: new Color("black"),
+            buttonTitleColor: new Color("black")
         };
         alert(options).then((result) => console.log(result));
     }

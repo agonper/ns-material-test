@@ -2,8 +2,8 @@
 import { platformNativeScriptDynamic } from "@nativescript/angular";
 
 import { AppModule } from "./app/app.module";
-
-/*import { themer } from "@nativescript-community/ui-material-core";
-themer.setPrimaryColor("blue");*/
+import { install, installMixins } from "@nativescript-community/ui-material-core";
+install();
+installMixins()
 
 platformNativeScriptDynamic().bootstrapModule(AppModule);
